@@ -43,17 +43,29 @@ class MapViewController: UIViewController {
         locationManager?.delegate = self
     }
     
+    
+    // Check status CLAuthorizationStatus
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.denied {
+            // The user denied authorization
+            let alert = UIAlertController(title: "Location Services Off", message: "Turn on Location Services in Settings > Privacy to allow Maps to determine your current location", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        } else if status == CLAuthorizationStatus.authorizedWhenInUse || status == CLAuthorizationStatus.authorizedAlways {
+            // The user accepted authorization
+            print("The user accepted authorization")
+        }
+    }
+    
     @IBAction func goTo(_ sender: UIBarButtonItem) {
-
-        //TODO: - check access to map or show allert
         locationManager?.startUpdatingLocation()
     }
     
     func removeMarker() {
         marker?.map = nil
         marker = nil
-    }
-    
+    }    
 }
 
 
