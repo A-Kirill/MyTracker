@@ -30,11 +30,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="IFH-6C-kgr">
-                        <barButtonItem key="rightBarButtonItem" title="Go" id="KOb-iF-kWt">
+                        <barButtonItem key="leftBarButtonItem" title="Start" id="KOb-iF-kWt">
                             <connections>
                                 <action selector="goTo:" destination="BYZ-38-t0r" id="BVZ-Pa-Wq8"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Stop" id="mtk-pg-xw6"/>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Kze-ih-Ssl" id="I8p-bK-KaI"/>

@@ -167,6 +167,7 @@
 				230BF99A24FBFF0600C99948 /* Frameworks */,
 				230BF99B24FBFF0600C99948 /* Resources */,
 				B8DE768AB33713D452791399 /* [CP] Copy Pods Resources */,
+				BF892C34669D373411E005B5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +262,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTracker/Pods-MyTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF892C34669D373411E005B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTracker/Pods-MyTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTracker/Pods-MyTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTracker/Pods-MyTracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
