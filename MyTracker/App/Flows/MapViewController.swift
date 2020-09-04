@@ -20,6 +20,8 @@ class MapViewController: UIViewController {
     
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
+    var prevRoute: GMSPolyline?
+    var locationServiceCheck: Bool = false
 
     @IBOutlet weak var mapView: GMSMapView!
     
@@ -78,7 +80,66 @@ class MapViewController: UIViewController {
         route?.map = mapView
         // Start tracking or continue if it is already running
         locationManager?.startUpdatingLocation()
+        locationServiceCheck = true
     }
+    
+    @IBAction func stopTapped(_ sender: UIBarButtonItem) {
+        locationManager?.stopUpdatingLocation()
+        locationServiceCheck = false
+        writeTrackToDB()
+    }
+    
+    @IBAction func previousTapped(_ sender: UIBarButtonItem) {
+        route?.map = nil
+        prevRoute?.map = nil
+        
+        if locationServiceCheck == true {
+            let alertController = UIAlertController (title: "Alert",
+                                                     message: "Need to stop route tracking",
+                                                     preferredStyle: .alert)
+            alertController.addAction (UIAlertAction(title: "Stop", style: .default, handler: { (action: UIAlertAction!) in
+                self.locationManager?.stopUpdatingLocation()
+                self.loadTrackFromDB()
+            }))
+            alertController.addAction (UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction!) in
+                print("Tracking continuing")
+            }))
+            self.present(alertController, animated: true, completion: nil )
+        } else {
+            self.locationManager?.stopUpdatingLocation()
+            loadTrackFromDB()
+        }
+    }
+    
+    private func writeTrackToDB() {
+        guard let route = routePath else { return }
+        var coord: [Coordinate] = []
+        for i in 0...route.count() - 1 {
+            let tp = Coordinate()
+            tp.id = Int(i + 1)
+            tp.latitude = route.coordinate(at: i).latitude
+            tp.longitude = route.coordinate(at: i).longitude
+            coord.append(tp)
+        }
+        DBManager.instance.removeRouteFromDb()
+        DBManager.instance.addRouteToDb(coord)
+    }
+    
+    private func loadTrackFromDB() {
+        let coords = DBManager.instance.loadTrackPointArrayFromDb()
+        let path = GMSMutablePath()
+        for coord in coords {
+            path.add(CLLocationCoordinate2D(latitude: coord.latitude, longitude: coord.longitude))
+        }
+        prevRoute = GMSPolyline(path: path)
+        prevRoute?.strokeColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        prevRoute?.strokeWidth = 8
+        prevRoute?.map = mapView
+        let bounds = GMSCoordinateBounds(coordinate: path.coordinate(at: 0), coordinate: path.coordinate(at: path.count() - 1))
+        let camera = mapView.camera(for: bounds, insets: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))!
+        mapView.camera = camera
+    }
+    
     
     func removeMarker() {
         marker?.map = nil

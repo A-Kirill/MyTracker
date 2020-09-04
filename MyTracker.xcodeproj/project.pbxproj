@@ -13,6 +13,8 @@
 		230BF9A824FBFF0600C99948 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230BF9A624FBFF0600C99948 /* Main.storyboard */; };
 		230BF9AA24FBFF0800C99948 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230BF9A924FBFF0800C99948 /* Assets.xcassets */; };
 		230BF9AD24FBFF0800C99948 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230BF9AB24FBFF0800C99948 /* LaunchScreen.storyboard */; };
+		23F85A0A2502B9E600EADE85 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A092502B9E600EADE85 /* Coordinate.swift */; };
+		23F85A0C2502BEDD00EADE85 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A0B2502BEDD00EADE85 /* DBManager.swift */; };
 		F76BC4D7A08AA0C269625A66 /* Pods_MyTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC76D8FC7403A84A888ED2AC /* Pods_MyTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		230BF9A924FBFF0800C99948 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		230BF9AC24FBFF0800C99948 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		230BF9AE24FBFF0800C99948 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23F85A092502B9E600EADE85 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		23F85A0B2502BEDD00EADE85 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		BC76D8FC7403A84A888ED2AC /* Pods_MyTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADED8812906AA43B6357C83 /* Pods-MyTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTracker.release.xcconfig"; path = "Target Support Files/Pods-MyTracker/Pods-MyTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,7 @@
 		23F85A0524FD7F8300EADE85 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				23F85A0B2502BEDD00EADE85 /* DBManager.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 		23F85A0624FD7F8F00EADE85 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				23F85A092502B9E600EADE85 /* Coordinate.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -288,9 +294,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23F85A0C2502BEDD00EADE85 /* DBManager.swift in Sources */,
 				230BF9A524FBFF0600C99948 /* MapViewController.swift in Sources */,
 				230BF9A124FBFF0600C99948 /* AppDelegate.swift in Sources */,
 				230BF9A324FBFF0600C99948 /* SceneDelegate.swift in Sources */,
+				23F85A0A2502B9E600EADE85 /* Coordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

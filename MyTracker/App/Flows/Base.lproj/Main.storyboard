@@ -30,12 +30,24 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="IFH-6C-kgr">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Start" id="KOb-iF-kWt">
                             <connections>
                                 <action selector="goTo:" destination="BYZ-38-t0r" id="BVZ-Pa-Wq8"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Stop" id="mtk-pg-xw6"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Previous" id="fIO-Kx-sCW">
+                                <connections>
+                                    <action selector="previousTapped:" destination="BYZ-38-t0r" id="sTj-9h-dEd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Stop" id="mtk-pg-xw6">
+                                <connections>
+                                    <action selector="stopTapped:" destination="BYZ-38-t0r" id="ubW-hM-8qb"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Kze-ih-Ssl" id="I8p-bK-KaI"/>
