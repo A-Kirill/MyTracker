@@ -22,6 +22,8 @@ class MapViewController: UIViewController {
     var routePath: GMSMutablePath?
     var prevRoute: GMSPolyline?
     var locationServiceCheck: Bool = false
+    
+    var usselesExampleVariable = ""
 
     @IBOutlet weak var mapView: GMSMapView!
     

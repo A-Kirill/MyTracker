@@ -10,10 +10,16 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
+    var onMap: ((String) -> Void)?
+    var onLogout: (() -> Void)?
+    
     @IBAction func showMap(_ sender: Any) {
+        onMap?("map")
     }
     
     @IBAction func logout(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "isLogin")
+        onLogout?()
     }
 
 }

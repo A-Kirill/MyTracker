@@ -13,12 +13,17 @@
 		230BF9A824FBFF0600C99948 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230BF9A624FBFF0600C99948 /* Main.storyboard */; };
 		230BF9AA24FBFF0800C99948 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230BF9A924FBFF0800C99948 /* Assets.xcassets */; };
 		230BF9AD24FBFF0800C99948 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230BF9AB24FBFF0800C99948 /* LaunchScreen.storyboard */; };
+		23841350250580F0002A297C /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2384134F250580F0002A297C /* StoryboardHelper.swift */; };
 		23F85A0A2502B9E600EADE85 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A092502B9E600EADE85 /* Coordinate.swift */; };
 		23F85A0C2502BEDD00EADE85 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A0B2502BEDD00EADE85 /* DBManager.swift */; };
 		23F85A0F2505585E00EADE85 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F85A0E2505585E00EADE85 /* Auth.storyboard */; };
 		23F85A11250558E100EADE85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A10250558E100EADE85 /* LoginViewController.swift */; };
 		23F85A1325055AA200EADE85 /* RecoveryPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A1225055AA200EADE85 /* RecoveryPasswordViewController.swift */; };
 		23F85A1625055C5C00EADE85 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A1525055C5C00EADE85 /* MainViewController.swift */; };
+		23F85A192505649600EADE85 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A182505649600EADE85 /* BaseCoordinator.swift */; };
+		23F85A1B2505652E00EADE85 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A1A2505652E00EADE85 /* ApplicationCoordinator.swift */; };
+		23F85A1D2505661E00EADE85 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A1C2505661E00EADE85 /* AuthCoordinator.swift */; };
+		23F85A1F250566D100EADE85 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A1E250566D100EADE85 /* MainCoordinator.swift */; };
 		F76BC4D7A08AA0C269625A66 /* Pods_MyTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC76D8FC7403A84A888ED2AC /* Pods_MyTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,12 +37,17 @@
 		230BF9A924FBFF0800C99948 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		230BF9AC24FBFF0800C99948 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		230BF9AE24FBFF0800C99948 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2384134F250580F0002A297C /* StoryboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
 		23F85A092502B9E600EADE85 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		23F85A0B2502BEDD00EADE85 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		23F85A0E2505585E00EADE85 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		23F85A10250558E100EADE85 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		23F85A1225055AA200EADE85 /* RecoveryPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordViewController.swift; sourceTree = "<group>"; };
 		23F85A1525055C5C00EADE85 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		23F85A182505649600EADE85 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		23F85A1A2505652E00EADE85 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		23F85A1C2505661E00EADE85 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		23F85A1E250566D100EADE85 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		BC76D8FC7403A84A888ED2AC /* Pods_MyTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADED8812906AA43B6357C83 /* Pods-MyTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTracker.release.xcconfig"; path = "Target Support Files/Pods-MyTracker/Pods-MyTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,7 +166,9 @@
 			children = (
 				23F85A0D2505582A00EADE85 /* Auth */,
 				23F85A1425055B9800EADE85 /* Main */,
+				23F85A172505645900EADE85 /* Coordinator */,
 				230BF9AB24FBFF0800C99948 /* LaunchScreen.storyboard */,
+				2384134F250580F0002A297C /* StoryboardHelper.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -179,6 +191,17 @@
 				23F85A1525055C5C00EADE85 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		23F85A172505645900EADE85 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				23F85A182505649600EADE85 /* BaseCoordinator.swift */,
+				23F85A1A2505652E00EADE85 /* ApplicationCoordinator.swift */,
+				23F85A1C2505661E00EADE85 /* AuthCoordinator.swift */,
+				23F85A1E250566D100EADE85 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		336C69135A965D0D7D087883 /* Frameworks */ = {
@@ -324,9 +347,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				23F85A11250558E100EADE85 /* LoginViewController.swift in Sources */,
+				23F85A1F250566D100EADE85 /* MainCoordinator.swift in Sources */,
+				23F85A192505649600EADE85 /* BaseCoordinator.swift in Sources */,
+				23841350250580F0002A297C /* StoryboardHelper.swift in Sources */,
 				23F85A1325055AA200EADE85 /* RecoveryPasswordViewController.swift in Sources */,
 				23F85A0C2502BEDD00EADE85 /* DBManager.swift in Sources */,
 				230BF9A524FBFF0600C99948 /* MapViewController.swift in Sources */,
+				23F85A1B2505652E00EADE85 /* ApplicationCoordinator.swift in Sources */,
+				23F85A1D2505661E00EADE85 /* AuthCoordinator.swift in Sources */,
 				230BF9A124FBFF0600C99948 /* AppDelegate.swift in Sources */,
 				230BF9A324FBFF0600C99948 /* SceneDelegate.swift in Sources */,
 				23F85A0A2502B9E600EADE85 /* Coordinate.swift in Sources */,

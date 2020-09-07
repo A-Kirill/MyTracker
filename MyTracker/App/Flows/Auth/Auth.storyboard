@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="LfI-HH-iYs">
             <objects>
-                <viewController id="7A0-iX-sLX" customClass="LoginViewController" customModule="MyTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="7A0-iX-sLX" customClass="LoginViewController" customModule="MyTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CaI-Dh-Ui7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
         <!--Recovery Password View Controller-->
         <scene sceneID="IYf-3d-5VD">
             <objects>
-                <viewController id="xWL-IY-3y6" customClass="RecoveryPasswordViewController" customModule="MyTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecoveryPasswordViewController" id="xWL-IY-3y6" customClass="RecoveryPasswordViewController" customModule="MyTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lx0-hS-8v8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

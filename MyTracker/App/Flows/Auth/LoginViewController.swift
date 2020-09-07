@@ -18,6 +18,9 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var loginView: UITextField!
     @IBOutlet weak var passwordView: UITextField!
     
+    var onLogin: (() -> Void)?
+    var onRecover: (() -> Void)?
+    
     
     @IBAction func login(_ sender: Any) {
         guard
@@ -27,11 +30,11 @@ final class LoginViewController: UIViewController {
         else {
             return
         }
-        
-        print("Логин")
+        UserDefaults.standard.set(true, forKey: "isLogin")
+        onLogin?()
     }
 
     @IBAction func recovery(_ sender: Any) {
-        
+        onRecover?()
     }
 }
