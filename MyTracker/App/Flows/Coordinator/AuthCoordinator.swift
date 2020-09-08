@@ -30,6 +30,10 @@ final class AuthCoordinator: BaseCoordinator {
             self?.onFinishFlow?()
         }
         
+        controller.onSignUp = { [weak self] in
+            self?.showSignUpModule()
+        }
+        
         let rootController = UINavigationController(rootViewController: controller)
         setAsRoot(rootController)
         self.rootController = rootController
@@ -38,6 +42,12 @@ final class AuthCoordinator: BaseCoordinator {
     private func showRecoverModule() {
         let controller = UIStoryboard(name: "Auth", bundle: nil)
             .instantiateViewController(RecoveryPasswordViewController.self)
+        rootController?.pushViewController(controller, animated: true)
+    }
+    
+    private func showSignUpModule() {
+        let controller = UIStoryboard(name: "Auth", bundle: nil)
+            .instantiateViewController(SignUpViewController.self)
         rootController?.pushViewController(controller, animated: true)
     }
     

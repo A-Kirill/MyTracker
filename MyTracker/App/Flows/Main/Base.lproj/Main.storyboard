@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -31,11 +31,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="IFH-6C-kgr">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Start" id="KOb-iF-kWt">
-                            <connections>
-                                <action selector="goTo:" destination="BYZ-38-t0r" id="BVZ-Pa-Wq8"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Previous" id="fIO-Kx-sCW">
                                 <connections>
@@ -47,6 +42,11 @@
                                     <action selector="stopTapped:" destination="BYZ-38-t0r" id="ubW-hM-8qb"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Start" id="KOb-iF-kWt">
+                                <connections>
+                                    <action selector="goTo:" destination="BYZ-38-t0r" id="BVZ-Pa-Wq8"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -55,34 +55,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1149" y="138"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Main Menu-->
         <scene sceneID="A9o-xV-evC">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="YTi-ml-ebU" customClass="MainViewController" customModule="MyTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" title="Main Menu" id="YTi-ml-ebU" customClass="MainViewController" customModule="MyTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uUJ-z4-UaD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1td-B3-nsZ">
-                                <rect key="frame" x="171" y="324" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Show Map"/>
-                                <connections>
-                                    <action selector="showMap:" destination="YTi-ml-ebU" eventType="touchUpInside" id="08b-Br-HKg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSO-On-CHL">
-                                <rect key="frame" x="192" y="419" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Exit"/>
-                                <connections>
-                                    <action selector="logout:" destination="YTi-ml-ebU" eventType="touchUpInside" id="d17-B9-5hi"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="KNT-jA-NY1">
+                                <rect key="frame" x="161" y="382.5" width="92" height="131"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1td-B3-nsZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Show Map"/>
+                                        <connections>
+                                            <action selector="showMap:" destination="YTi-ml-ebU" eventType="touchUpInside" id="08b-Br-HKg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSO-On-CHL">
+                                        <rect key="frame" x="30" y="95" width="32" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Exit"/>
+                                        <connections>
+                                            <action selector="logout:" destination="YTi-ml-ebU" eventType="touchUpInside" id="d17-B9-5hi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KNT-jA-NY1" firstAttribute="centerX" secondItem="uUJ-z4-UaD" secondAttribute="centerX" id="jEB-5N-XWY"/>
+                            <constraint firstItem="KNT-jA-NY1" firstAttribute="centerY" secondItem="uUJ-z4-UaD" secondAttribute="centerY" id="zGd-92-Led"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="m6I-RV-oF6"/>
                     </view>
                 </viewController>

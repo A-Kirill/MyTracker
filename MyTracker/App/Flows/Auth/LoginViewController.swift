@@ -20,21 +20,32 @@ final class LoginViewController: UIViewController {
     
     var onLogin: (() -> Void)?
     var onRecover: (() -> Void)?
+    var onSignUp: (() -> Void)?
     
     
     @IBAction func login(_ sender: Any) {
         guard
             let login = loginView.text,
             let password = passwordView.text,
-            login == Constants.login && password == Constants.password
-        else {
-            return
+            login != "" && password != ""
+            else {
+                showAlert("Alert", "Login and password required")
+                return
         }
-        UserDefaults.standard.set(true, forKey: "isLogin")
-        onLogin?()
+        if DBManager.instance.checkUser(login: login, password: password) {
+            UserDefaults.standard.set(true, forKey: "isLogin")
+            onLogin?()
+        } else {
+            showAlert("Alert", "Incorrect login and/or password")
+        }
     }
 
     @IBAction func recovery(_ sender: Any) {
         onRecover?()
     }
+    
+    @IBAction func signUp(_ sender: Any) {
+        onSignUp?()
+    }
+    
 }

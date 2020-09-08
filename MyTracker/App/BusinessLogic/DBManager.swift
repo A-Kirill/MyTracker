@@ -14,6 +14,7 @@ class DBManager {
  static let instance = DBManager()
     private init() {}
     
+    // MARK: - Route actions
     func addRouteToDb(_ track: [Coordinate]) {
         do {
             let realm = try Realm()
@@ -47,4 +48,33 @@ class DBManager {
             return []
         }
     }
+    
+    
+    // MARK: - User actions
+    func registerUser(login: String, password: String) -> Bool {
+        let user = User(value: [login, password])
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(user, update: .all)
+            try realm.commitWrite()
+            return true
+        } catch {
+            print(error)
+            return false
+        }
+    }
+    
+    func checkUser(login: String, password: String) -> Bool {
+        var result = false
+        do {
+            let realm = try Realm()
+            let users = Array(realm.objects(User.self).filter("login = '\(login)' AND password = '\(password)'"))
+            result = users.count > 0
+        } catch {
+            print(error)
+        }
+        return result
+    }
+    
 }
