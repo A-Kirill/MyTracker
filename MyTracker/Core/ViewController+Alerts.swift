@@ -17,4 +17,25 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func showAlertWithComletion(_ title: String, _ message: String, completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            completion()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showMapAlert(_ title: String, _ message: String, completion: @escaping () -> Void) {
+        let alert = UIAlertController (title: title,
+                                       message: message,
+                                       preferredStyle: .alert)
+        alert.addAction (UIAlertAction(title: "Stop", style: .default, handler: { action in
+            completion()
+        }))
+        alert.addAction (UIAlertAction(title: "Cancel", style: .default, handler: { action in
+            print("Tracking continuing")
+        }))
+        present(alert, animated: true, completion: nil )
+        
+    }
 }

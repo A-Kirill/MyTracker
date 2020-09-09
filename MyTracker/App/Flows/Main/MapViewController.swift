@@ -97,18 +97,10 @@ class MapViewController: UIViewController {
         
         if locationServiceCheck == true {
             
-            let alertController = UIAlertController (title: "Alert",
-                                                     message: "Need to stop route tracking",
-                                                     preferredStyle: .alert)
-            alertController.addAction (UIAlertAction(title: "Stop", style: .default, handler: { (action: UIAlertAction!) in
+            showMapAlert("Alert","Need to stop route tracking") {
                 self.locationManager?.stopUpdatingLocation()
                 self.loadTrackFromDB()
-            }))
-            alertController.addAction (UIAlertAction(title: "Cancel", style: .default, handler: { (action: UIAlertAction!) in
-                print("Tracking continuing")
-            }))
-            self.present(alertController, animated: true, completion: nil )
-            
+            }            
         } else {
             loadTrackFromDB()
         }

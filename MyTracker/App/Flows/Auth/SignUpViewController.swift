@@ -24,7 +24,9 @@ final class SignUpViewController: UIViewController {
                 return
         }
         if DBManager.instance.registerUser(login: login, password: password) {
-            showAlert("Info", "User was registered successfully")
+            showAlertWithComletion("Success", "Try login with new credentials") {
+                self.navigationController?.popViewController(animated: true)
+            }
         } else {
             showAlert("Error", "Error occured while user register")
         }
