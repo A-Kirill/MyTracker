@@ -48,4 +48,7 @@ final class LoginViewController: UIViewController {
         onSignUp?()
     }
     
+//    @IBAction func showPass(_ sender: Any) {
+//        passwordView.isSecureTextEntry.toggle()
+//    }
 }
