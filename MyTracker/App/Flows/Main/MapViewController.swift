@@ -15,7 +15,8 @@ class MapViewController: UIViewController {
     private let defaultZoom: Float = 17
     
     private var marker: GMSMarker?
-    private var locationManager: CLLocationManager?
+//    private var locationManager: CLLocationManager?
+    let locationManager = LocationManager.instance
     private var geocoder = CLGeocoder()
     
     var route: GMSPolyline?
@@ -45,13 +46,27 @@ class MapViewController: UIViewController {
     }
     
     func configureLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.allowsBackgroundLocationUpdates = true
-        locationManager?.pausesLocationUpdatesAutomatically = false
-        locationManager?.startMonitoringSignificantLocationChanges()
-        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager?.requestWhenInUseAuthorization()
+        //with Rx:
+        locationManager
+            .location
+            .asObservable()
+            .bind { [weak self] location in
+                guard let location = location else { return }
+                self?.routePath?.add(location.coordinate)
+                // Обновляем путь у линии маршрута путём повторного присвоения
+                self?.route?.path = self?.routePath
+                
+                // Чтобы наблюдать за движением, установим камеру на только что добавленную точку
+                let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
+                self?.mapView.animate(to: position)
+        }
+//        locationManager = CLLocationManager()
+//        locationManager?.delegate = self
+//        locationManager?.allowsBackgroundLocationUpdates = true
+//        locationManager?.pausesLocationUpdatesAutomatically = false
+//        locationManager?.startMonitoringSignificantLocationChanges()
+//        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager?.requestWhenInUseAuthorization()
     }
     
     
@@ -81,12 +96,12 @@ class MapViewController: UIViewController {
         // Add a new line to the map
         route?.map = mapView
         // Start tracking or continue if it is already running
-        locationManager?.startUpdatingLocation()
+        locationManager.startUpdatingLocation()
         locationServiceCheck = true
     }
     
     @IBAction func stopTapped(_ sender: UIBarButtonItem) {
-        locationManager?.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
         locationServiceCheck = false
         writeTrackToDB()
     }
@@ -98,7 +113,7 @@ class MapViewController: UIViewController {
         if locationServiceCheck == true {
             
             showMapAlert("Alert","Need to stop route tracking") {
-                self.locationManager?.stopUpdatingLocation()
+                self.locationManager.stopUpdatingLocation()
                 self.loadTrackFromDB()
             }            
         } else {
