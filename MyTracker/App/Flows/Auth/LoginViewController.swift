@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class LoginViewController: UIViewController {
     
@@ -17,6 +19,7 @@ final class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginView: UITextField!
     @IBOutlet weak var passwordView: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     var onLogin: (() -> Void)?
     var onRecover: (() -> Void)?
@@ -47,6 +50,34 @@ final class LoginViewController: UIViewController {
     @IBAction func signUp(_ sender: Any) {
         onSignUp?()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureLoginBindings()
+    }
+    
+    // метод для настройки биндингов:
+    func configureLoginBindings() {
+            Observable
+    // Объединяем два обсервера в один
+                .combineLatest(
+    // Обсервер изменения текста
+                    loginView.rx.text,
+    // Обсервер изменения текста
+                    passwordView.rx.text
+                )
+    // Модифицируем значения из двух обсерверов в один
+                .map { login, password in
+    // Если введены логин и пароль больше 6 символов, будет возвращено “истина”
+                    return !(login ?? "").isEmpty && (password ?? "").count >= 5
+                }
+    // Подписываемся на получение событий
+                .bind { [weak loginButton] inputFilled in
+    // Если событие означает успех, активируем кнопку, иначе деактивируем
+                    loginButton?.isEnabled = inputFilled
+            }
+        }
     
 //    @IBAction func showPass(_ sender: Any) {
 //        passwordView.isSecureTextEntry.toggle()

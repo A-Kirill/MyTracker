@@ -7,6 +7,8 @@ target 'MyTracker' do
 
 pod 'GoogleMaps'
 pod 'RealmSwift'
+pod 'RxSwift'
+pod 'RxCocoa'
 
   # Pods for MyTracker
 
