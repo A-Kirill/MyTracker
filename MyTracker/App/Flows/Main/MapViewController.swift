@@ -107,8 +107,6 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func previousTapped(_ sender: UIBarButtonItem) {
-        route?.map = nil
-        prevRoute?.map = nil
         
         if locationServiceCheck == true {
             
