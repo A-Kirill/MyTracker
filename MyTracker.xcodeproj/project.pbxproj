@@ -17,6 +17,7 @@
 		23841350250580F0002A297C /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2384134F250580F0002A297C /* StoryboardHelper.swift */; };
 		238413522506A706002A297C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238413512506A706002A297C /* User.swift */; };
 		238413552506AE3C002A297C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238413542506AE3C002A297C /* SignUpViewController.swift */; };
+		23E671902518FC4500A21E35 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6718F2518FC4500A21E35 /* NotificationManager.swift */; };
 		23F85A0A2502B9E600EADE85 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A092502B9E600EADE85 /* Coordinate.swift */; };
 		23F85A0C2502BEDD00EADE85 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A0B2502BEDD00EADE85 /* DBManager.swift */; };
 		23F85A0F2505585E00EADE85 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F85A0E2505585E00EADE85 /* Auth.storyboard */; };
@@ -45,6 +46,7 @@
 		2384134F250580F0002A297C /* StoryboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
 		238413512506A706002A297C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		238413542506AE3C002A297C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		23E6718F2518FC4500A21E35 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		23F85A092502B9E600EADE85 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		23F85A0B2502BEDD00EADE85 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		23F85A0E2505585E00EADE85 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				23F85A0B2502BEDD00EADE85 /* DBManager.swift */,
 				235E7BA4250FE898003E43D3 /* LocationManager.swift */,
+				23E6718F2518FC4500A21E35 /* NotificationManager.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -254,7 +257,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Kirill Anisimov";
 				TargetAttributes = {
 					230BF99C24FBFF0600C99948 = {
@@ -370,6 +373,7 @@
 				23F85A1B2505652E00EADE85 /* ApplicationCoordinator.swift in Sources */,
 				238413552506AE3C002A297C /* SignUpViewController.swift in Sources */,
 				23F85A1D2505661E00EADE85 /* AuthCoordinator.swift in Sources */,
+				23E671902518FC4500A21E35 /* NotificationManager.swift in Sources */,
 				23FF4DE8250812330001E561 /* ViewController+Alerts.swift in Sources */,
 				230BF9A124FBFF0600C99948 /* AppDelegate.swift in Sources */,
 				230BF9A324FBFF0600C99948 /* SceneDelegate.swift in Sources */,
@@ -426,6 +430,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -486,6 +491,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

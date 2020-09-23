@@ -8,12 +8,30 @@
 
 import UIKit
 import GoogleMaps
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let center = UNUserNotificationCenter.current()
+        
+        center.getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .authorized:
+                print("Разрешение есть")
+            default:
+                center.requestAuthorization(options: [.alert, .sound, .badge]) {(state, error) in
+                    if state {
+                        print("Разрешение получено.")
+                    } else {
+                        print("Разрешение не получено.")
+                    }
+                }
+            }
+        }
         
         return true
     }

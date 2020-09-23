@@ -46,6 +46,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
+        NotificationManager.instance.sendNotificatioRequest(content: NotificationManager.instance.makeNotificationContent(title: "Reminder", subtitle: "Example:", body: "Let's go back to the app."),
+                                                            trigger: NotificationManager.instance.makeIntervalNotificatioTrigger(min: 30))
+        
         if !self.visualEffectView.isDescendant(of: self.window!) {
             let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
             self.visualEffectView = UIVisualEffectView(effect: blurEffect)
