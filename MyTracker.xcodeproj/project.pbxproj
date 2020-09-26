@@ -18,6 +18,8 @@
 		238413522506A706002A297C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238413512506A706002A297C /* User.swift */; };
 		238413552506AE3C002A297C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238413542506AE3C002A297C /* SignUpViewController.swift */; };
 		23E671902518FC4500A21E35 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6718F2518FC4500A21E35 /* NotificationManager.swift */; };
+		23E67197251DE3F000A21E35 /* SelfyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E67196251DE3F000A21E35 /* SelfyViewController.swift */; };
+		23E6719A251F3A3400A21E35 /* SelfieMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E67199251F3A3400A21E35 /* SelfieMarker.swift */; };
 		23F85A0A2502B9E600EADE85 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A092502B9E600EADE85 /* Coordinate.swift */; };
 		23F85A0C2502BEDD00EADE85 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F85A0B2502BEDD00EADE85 /* DBManager.swift */; };
 		23F85A0F2505585E00EADE85 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F85A0E2505585E00EADE85 /* Auth.storyboard */; };
@@ -47,6 +49,8 @@
 		238413512506A706002A297C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		238413542506AE3C002A297C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		23E6718F2518FC4500A21E35 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		23E67196251DE3F000A21E35 /* SelfyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfyViewController.swift; sourceTree = "<group>"; };
+		23E67199251F3A3400A21E35 /* SelfieMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieMarker.swift; sourceTree = "<group>"; };
 		23F85A092502B9E600EADE85 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		23F85A0B2502BEDD00EADE85 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		23F85A0E2505585E00EADE85 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 				230BF9A424FBFF0600C99948 /* MapViewController.swift */,
 				230BF9A624FBFF0600C99948 /* Main.storyboard */,
 				23F85A1525055C5C00EADE85 /* MainViewController.swift */,
+				23E67196251DE3F000A21E35 /* SelfyViewController.swift */,
+				23E67199251F3A3400A21E35 /* SelfieMarker.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -364,12 +370,14 @@
 				23F85A11250558E100EADE85 /* LoginViewController.swift in Sources */,
 				235E7BA5250FE898003E43D3 /* LocationManager.swift in Sources */,
 				23F85A1F250566D100EADE85 /* MainCoordinator.swift in Sources */,
+				23E6719A251F3A3400A21E35 /* SelfieMarker.swift in Sources */,
 				23F85A192505649600EADE85 /* BaseCoordinator.swift in Sources */,
 				23841350250580F0002A297C /* StoryboardHelper.swift in Sources */,
 				23F85A1325055AA200EADE85 /* RecoveryPasswordViewController.swift in Sources */,
 				23F85A0C2502BEDD00EADE85 /* DBManager.swift in Sources */,
 				238413522506A706002A297C /* User.swift in Sources */,
 				230BF9A524FBFF0600C99948 /* MapViewController.swift in Sources */,
+				23E67197251DE3F000A21E35 /* SelfyViewController.swift in Sources */,
 				23F85A1B2505652E00EADE85 /* ApplicationCoordinator.swift in Sources */,
 				238413552506AE3C002A297C /* SignUpViewController.swift in Sources */,
 				23F85A1D2505661E00EADE85 /* AuthCoordinator.swift in Sources */,

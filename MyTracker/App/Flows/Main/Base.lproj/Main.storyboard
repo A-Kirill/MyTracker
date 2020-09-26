@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,17 +19,17 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kze-ih-Ssl" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Kze-ih-Ssl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="87M-bq-J6h"/>
                             <constraint firstItem="Kze-ih-Ssl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zog-jZ-dyu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kze-ih-Ssl" secondAttribute="trailing" id="kgc-u4-mpx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kze-ih-Ssl" secondAttribute="bottom" id="xDh-vt-9cx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="IFH-6C-kgr">
                         <nil key="title"/>
@@ -55,7 +57,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="138"/>
+            <point key="canvasLocation" x="891" y="138"/>
+        </scene>
+        <!--Selfy View Controller-->
+        <scene sceneID="Kgh-LO-MGs">
+            <objects>
+                <viewController storyboardIdentifier="SelfyViewController" id="lgH-UG-amf" customClass="SelfyViewController" customModule="MyTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qaf-qf-vrE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hDz-f2-uTR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tld-8S-d9Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hDz-f2-uTR" secondAttribute="bottom" id="8dc-aH-5QM"/>
+                            <constraint firstItem="hDz-f2-uTR" firstAttribute="top" secondItem="Qaf-qf-vrE" secondAttribute="top" id="JWc-ni-8m7"/>
+                            <constraint firstItem="hDz-f2-uTR" firstAttribute="trailing" secondItem="tld-8S-d9Q" secondAttribute="trailing" id="Zcu-vT-9UP"/>
+                            <constraint firstItem="hDz-f2-uTR" firstAttribute="leading" secondItem="tld-8S-d9Q" secondAttribute="leading" id="xBt-e3-A8C"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="hDz-f2-uTR" id="2VK-Lh-9hi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6jz-C6-Ezd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="137.94642857142856"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="A9o-xV-evC">
@@ -66,18 +97,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="KNT-jA-NY1">
-                                <rect key="frame" x="161" y="382.5" width="92" height="131"/>
+                                <rect key="frame" x="153.5" y="255.5" width="107" height="385"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1td-B3-nsZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="92" height="36"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wvh-3n-AQM">
+                                        <rect key="frame" x="3.5" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="KuC-fx-SRQ"/>
+                                            <constraint firstAttribute="height" constant="100" id="pXT-TJ-Ey1"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="50"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1td-B3-nsZ">
+                                        <rect key="frame" x="7" y="159" width="93" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Show Map"/>
                                         <connections>
                                             <action selector="showMap:" destination="YTi-ml-ebU" eventType="touchUpInside" id="08b-Br-HKg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSO-On-CHL">
-                                        <rect key="frame" x="30" y="95" width="32" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiH-Ww-MJB">
+                                        <rect key="frame" x="0.0" y="254" width="107" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Take a selfie"/>
+                                        <connections>
+                                            <action selector="takePicture:" destination="YTi-ml-ebU" eventType="touchUpInside" id="Q6Z-nL-Ts4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSO-On-CHL">
+                                        <rect key="frame" x="37.5" y="349" width="32" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Exit"/>
                                         <connections>
@@ -87,17 +136,25 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="m6I-RV-oF6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KNT-jA-NY1" firstAttribute="centerX" secondItem="uUJ-z4-UaD" secondAttribute="centerX" id="jEB-5N-XWY"/>
                             <constraint firstItem="KNT-jA-NY1" firstAttribute="centerY" secondItem="uUJ-z4-UaD" secondAttribute="centerY" id="zGd-92-Led"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="m6I-RV-oF6"/>
                     </view>
+                    <connections>
+                        <outlet property="avatarView" destination="Wvh-3n-AQM" id="wtO-h2-HnI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OhF-Ht-Iwn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-87" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

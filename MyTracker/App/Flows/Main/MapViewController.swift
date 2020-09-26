@@ -17,6 +17,9 @@ class MapViewController: UIViewController {
     private var marker: GMSMarker?
 //    private var locationManager: CLLocationManager?
     let locationManager = LocationManager.instance
+    let selfieMarker = SelfieMarker()
+    var icon: UIImage?
+    var markers = [GMSMarker]()
     private var geocoder = CLGeocoder()
     
     var route: GMSPolyline?
@@ -47,7 +50,7 @@ class MapViewController: UIViewController {
     
     func configureLocationManager() {
         //with Rx:
-        locationManager
+        _ = locationManager
             .location
             .asObservable()
             .bind { [weak self] location in
@@ -98,6 +101,20 @@ class MapViewController: UIViewController {
         // Start tracking or continue if it is already running
         locationManager.startUpdatingLocation()
         locationServiceCheck = true
+        
+        _ = locationManager
+            .location
+            .asObservable()
+            .bind { [weak self] location in
+                guard let location = location else { return }
+                
+                if let markers = self?.markers {
+                    for item in markers {
+                        item.map = nil
+                    }
+                    self?.addMarker(coordinate: location.coordinate)
+                }
+            }
     }
     
     @IBAction func stopTapped(_ sender: UIBarButtonItem) {
@@ -152,7 +169,19 @@ class MapViewController: UIViewController {
     func removeMarker() {
         marker?.map = nil
         marker = nil
-    }    
+    }
+    
+    func addMarker(coordinate: CLLocationCoordinate2D) {
+        let marker = GMSMarker(position: coordinate)
+        let selfieMarker = SelfieMarker()
+        self.icon = selfieMarker.loadImageFromDiskWith(fileName: "selfie.png")
+        if let icon = self.icon {
+            marker.icon = selfieMarker.drawImageWithProfilePic(pic: icon, image: UIImage(imageLiteralResourceName: "marker2"))
+        }
+        marker.map = mapView
+        self.marker = marker
+        self.markers.append(self.marker!)
+    }
 }
 
 
